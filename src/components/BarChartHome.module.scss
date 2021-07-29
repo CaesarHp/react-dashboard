@@ -1,0 +1,16 @@
+.bar-chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 3rem;
+  border-radius: 2rem;
+  background-color: white;
+}
+
+.bar-chart-title {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}

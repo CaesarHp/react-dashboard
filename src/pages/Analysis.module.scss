@@ -1,0 +1,23 @@
+@import "../scss-var.scss";
+
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 3rem;
+}
+
+.analysis-main-content {
+  display: flex;
+}
+
+.analysis-data {
+  flex: 0 0 72%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+}
+
+.analysis-user {
+  flex: 1;
+}

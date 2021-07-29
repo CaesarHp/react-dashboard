@@ -1,0 +1,19 @@
+@import "../scss-var.scss";
+
+.container {
+  max-width: 105rem;
+  max-height: 62rem;
+  min-height: 62rem;
+  width: 105rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  background-color: $color-main-light-bg;
+  border-radius: 0 1rem 1rem 0;
+}

@@ -1,0 +1,64 @@
+@import "../scss-var.scss";
+
+.card-link {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.3rem;
+  border-radius: 1.5rem;
+  background-color: white;
+}
+
+.card-bg {
+  &-sleep {
+    border-radius: 100%;
+    background: $color-orange-light;
+    padding: 1.6rem;
+  }
+
+  &-step {
+    border-radius: 100%;
+    background: $color-purple-light;
+    padding: 1.6rem;
+  }
+
+  &-heart {
+    border-radius: 100%;
+    background: $color-red-light;
+    padding: 1.6rem;
+  }
+}
+
+.card-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+
+  &-title {
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &-content {
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: $color-grey-light-4;
+  }
+}

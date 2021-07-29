@@ -1,0 +1,96 @@
+@import "../scss-var.scss";
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  background: white;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.user-icon {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.user-basic-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.user-name {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.user-job {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $color-grey-dark-3;
+}
+
+.user-body-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  &-individual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-title {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  &-data {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $color-grey-dark-3;
+  }
+}
+
+.user-monthly-prograss {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.user-todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &-list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  &-item {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $color-grey-dark-3;
+    margin-bottom: 0.6rem;
+  }
+}
+
+.user-title {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
