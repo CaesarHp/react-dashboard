@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Analysis.module.scss";
 import Header from "../components/Header";
-import LineChartHome from "../components/LineChartAnalysis";
+import LineChartAnalysis from "../components/LineChartAnalysis";
 import Card from "../cards/Card";
 
 const Analysis = function () {
@@ -10,10 +10,11 @@ const Analysis = function () {
     <React.Fragment>
       <div className={classes["analysis-container"]}>
         <Header title={"Analysis"} />
-        <main>
-          <Card value={"sleep"} />
-          <Card value={"step"} />
-          <Card value={"heart"} />
+        <main className={classes["analysis-main-container"]}>
+          <LineChartAnalysis />
+          <LineChartAnalysis />
+          <LineChartAnalysis />
+          <LineChartAnalysis />
         </main>
       </div>
     </React.Fragment>

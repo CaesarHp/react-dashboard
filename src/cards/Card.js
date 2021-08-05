@@ -1,33 +1,33 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import { IconContext } from "react-icons";
 import { FaMoon, FaWalking, FaHeart } from "react-icons/fa";
 
 import classes from "./Card.module.scss";
 
-const Card = function ({ value }) {
-  const [style, setStyle] = useState({});
-
+const Card = function ({ value, data }) {
   const options = {
     sleep: {
       iconClass: "sleep",
       icon: <FaMoon color="#ff904f" />,
       title: "Sleep",
-      info: "8 hr last night",
+      info: `${data} hr last night`,
     },
     step: {
       iconClass: "step",
       icon: <FaWalking color="#d05eff" />,
       title: "Steps",
-      info: "5624 steps today",
+      info: `${data} steps today`,
     },
     heart: {
       iconClass: "heart",
       icon: <FaHeart color="#ff5c8f" />,
       title: "Heart",
-      info: "85 Bpm last 5 min",
+      info: `${data} Bpm last 5 min`,
     },
   };
+
+  const [style, setStyle] = useState({});
 
   useEffect(() => {
     if (value === "sleep") {
@@ -44,19 +44,17 @@ const Card = function ({ value }) {
   }, [value]);
 
   return (
-    <Link to="/analysis" className={classes["card-link"]}>
-      <IconContext.Provider value={{ className: classes["card-icon"] }}>
-        <div className={classes["container"]}>
-          <div className={classes[`card-bg-${style.iconClass}`]}>
-            {style.icon}
-          </div>
-          <div className={classes["card-info"]}>
-            <span className={classes["card-info-title"]}>{style.title}</span>
-            <span className={classes["card-info-content"]}>{style.info}</span>
-          </div>
+    <IconContext.Provider value={{ className: classes["card-icon"] }}>
+      <div className={classes["container"]}>
+        <div className={classes[`card-bg-${style.iconClass}`]}>
+          {style.icon}
         </div>
-      </IconContext.Provider>
-    </Link>
+        <div className={classes["card-info"]}>
+          <span className={classes["card-info-title"]}>{style.title}</span>
+          <span className={classes["card-info-content"]}>{style.info}</span>
+        </div>
+      </div>
+    </IconContext.Provider>
   );
 };
 

@@ -1,0 +1,103 @@
+@import "../scss-var.scss";
+
+.listform-container {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  font-family: inherit;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.listform-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.listform-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.form-container:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.form-select {
+  padding: 1rem;
+  border: none;
+  background-color: $color-grey-light-1;
+  outline: none;
+}
+
+.form-label {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: $color-grey-dark-1;
+}
+
+.form-input {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: $color-grey-light-1;
+  outline: none;
+}
+
+.form-heartrate {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: black;
+  background-color: $color-grey-light-1;
+  padding: 1rem 2rem 1rem 1rem;
+}
+
+.form-btn-container {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form-btn-save {
+  padding: 1.5rem 2.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: $color-main;
+  color: white;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-btn-clear {
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: white;
+  border: 1.5px solid $color-main;
+  color: $color-main;
+
+  margin-right: 2rem;
+
+  &:focus {
+    outline: none;
+  }
+}

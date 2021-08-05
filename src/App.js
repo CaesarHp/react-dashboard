@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import Layout from "./layout/Layout";
@@ -8,19 +8,6 @@ import List from "./pages/List";
 import Account from "./pages/Account";
 
 function App() {
-  const fetchData = async function () {
-    const response = await fetch(
-      "https://react-http-51d90-default-rtdb.firebaseio.com/quotes.json"
-    );
-    const data = await response.json();
-
-    console.log(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  });
-
   return (
     <Layout>
       <Switch>

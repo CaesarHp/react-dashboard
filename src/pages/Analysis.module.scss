@@ -7,17 +7,9 @@
   padding: 3rem;
 }
 
-.analysis-main-content {
-  display: flex;
-}
-
-.analysis-data {
-  flex: 0 0 72%;
-  display: flex;
-  flex-direction: column;
-  margin-right: 2rem;
-}
-
-.analysis-user {
-  flex: 1;
+.analysis-main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-rows: min-content;
+  grid-gap: 4rem;
 }
