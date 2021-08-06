@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import classes from "./ListCaloriesForm.module.scss";
+import classes from "./AnalysisCaloriesForm.module.scss";
 import { dataActions } from "../store/data-slice";
 
 const timeRange = {
@@ -11,8 +11,10 @@ const timeRange = {
   night: "21:00-0:00",
 };
 
-const ListCaloriesForm = function () {
+const AnalysisCaloriesForm = function () {
   const dispatch = useDispatch();
+
+  const previousData = useSelector((state) => state.data.caloriesData);
 
   const [formData, setFormData] = useState({
     morningBurn: "",
@@ -67,6 +69,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="morningBurn"
+              placeholder={previousData.morningBurn}
               value={formData.morningBurn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -79,6 +82,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="morningEarn"
+              placeholder={previousData.morningEarn}
               value={formData.morningEarn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -94,6 +98,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="noonBurn"
+              placeholder={previousData.noonBurn}
               value={formData.noonBurn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -106,6 +111,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="noonEarn"
+              placeholder={previousData.noonEarn}
               value={formData.noonEarn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -121,6 +127,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="afternoonBurn"
+              placeholder={previousData.afternoonBurn}
               value={formData.afternoonBurn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -133,6 +140,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="afternoonEarn"
+              placeholder={previousData.afternoonEarn}
               value={formData.afternoonEarn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -148,6 +156,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="nightBurn"
+              placeholder={previousData.nightBurn}
               value={formData.nightBurn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -160,6 +169,7 @@ const ListCaloriesForm = function () {
             <input
               type="text"
               name="nightEarn"
+              placeholder={previousData.nightEarn}
               value={formData.nightEarn}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
@@ -185,4 +195,4 @@ const ListCaloriesForm = function () {
   );
 };
 
-export default ListCaloriesForm;
+export default AnalysisCaloriesForm;

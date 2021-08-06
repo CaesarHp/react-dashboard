@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import classes from "./ListBasicForm.module.scss";
+import classes from "./AnalysisBasicForm.module.scss";
 import { dataActions } from "../store/data-slice";
 
-const ListBasicFormTest = () => {
+const AnalysisBasicForm = () => {
   const dispatch = useDispatch();
+
+  const previousData = useSelector((state) => state.data.basicData);
 
   const [formData, setFormData] = useState({
     sleepGoal: "",
@@ -50,16 +52,14 @@ const ListBasicFormTest = () => {
             <label className={classes["form-label"]}>
               Sleep hours goal (hr):
             </label>
-            <select
-              onChange={inputChangeHandler}
+            <input
+              type="text"
+              value={formData.sleepGoal}
               name="sleepGoal"
-              className={classes["form-select"]}
-            >
-              <option value="7">7</option>
-              <option value="7.5">7.5</option>
-              <option value="8">8</option>
-              <option value="8.5">8.5</option>
-            </select>
+              placeholder={previousData.sleepGoal}
+              onChange={inputChangeHandler}
+              className={classes["form-input"]}
+            />
           </form>
           <form className={classes["form-container"]}>
             <label className={classes["form-label"]}>
@@ -69,6 +69,7 @@ const ListBasicFormTest = () => {
               type="text"
               value={formData.sleepToday}
               name="sleepToday"
+              placeholder={previousData.sleepToday}
               onChange={inputChangeHandler}
               className={classes["form-input"]}
             />
@@ -83,6 +84,7 @@ const ListBasicFormTest = () => {
               value={formData.stepsGoal}
               onChange={inputChangeHandler}
               name="stepsGoal"
+              placeholder={previousData.stepsGoal}
               className={classes["form-input"]}
             />
           </form>
@@ -93,6 +95,7 @@ const ListBasicFormTest = () => {
               value={formData.stepsToday}
               onChange={inputChangeHandler}
               name="stepsToday"
+              placeholder={previousData.stepsToday}
               className={classes["form-input"]}
             />
           </form>
@@ -113,6 +116,7 @@ const ListBasicFormTest = () => {
               value={formData.heartRate}
               onChange={inputChangeHandler}
               name="heartRate"
+              placeholder={previousData.heartRate}
               className={classes["form-input"]}
             />
           </form>
@@ -138,4 +142,4 @@ const ListBasicFormTest = () => {
   );
 };
 
-export default ListBasicFormTest;
+export default AnalysisBasicForm;

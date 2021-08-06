@@ -2,20 +2,16 @@ import React from "react";
 
 import classes from "./Analysis.module.scss";
 import Header from "../components/Header";
-import LineChartAnalysis from "../components/LineChartAnalysis";
-import Card from "../cards/Card";
+import AnalysisBasicForm from "../components/AnalysisBasicForm";
+import AnalysisCaloriesForm from "../components/AnalysisCaloriesForm";
 
 const Analysis = function () {
   return (
     <React.Fragment>
       <div className={classes["analysis-container"]}>
         <Header title={"Analysis"} />
-        <main className={classes["analysis-main-container"]}>
-          <LineChartAnalysis />
-          <LineChartAnalysis />
-          <LineChartAnalysis />
-          <LineChartAnalysis />
-        </main>
+        <AnalysisBasicForm />
+        <AnalysisCaloriesForm />
       </div>
     </React.Fragment>
   );

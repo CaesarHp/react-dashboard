@@ -1,0 +1,29 @@
+@import "../scss-var.scss";
+
+.listform-input {
+  border: none;
+  background-color: $color-grey-light-1;
+  width: 40%;
+  padding: 1rem;
+  margin-right: 2rem;
+  outline: none;
+
+  &::-webkit-input-placeholder {
+    color: $color-grey-light-4;
+  }
+}
+
+.listform-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: $color-main;
+  color: white;
+
+  &:focus {
+    outline: none;
+  }
+}

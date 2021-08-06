@@ -1,0 +1,55 @@
+@import "../scss-var.scss";
+
+.todo-container-uncompleted {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: $color-grey-light-1;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-container-completed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: $color-grey-light-2;
+  opacity: 40%;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-icon {
+  width: 2rem;
+  height: 2rem;
+  color: $color-main;
+  cursor: pointer;
+}
+
+.todo-icon:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.todo-info-uncompleted {
+  color: $color-grey-dark-1;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-info-completed {
+  color: $color-grey-dark-3;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  transition: all 0.2s ease-in-out;
+}

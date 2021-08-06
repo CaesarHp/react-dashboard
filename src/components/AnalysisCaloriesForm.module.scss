@@ -44,6 +44,10 @@
   border: none;
   background-color: $color-grey-light-1;
   outline: none;
+
+  &::-webkit-input-placeholder {
+    color: $color-grey-light-4;
+  }
 }
 
 .form-btn-container {

@@ -1,0 +1,17 @@
+@import "../scss-var.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+  font-family: inherit;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}

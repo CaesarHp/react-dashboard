@@ -1,8 +1,12 @@
+import { useSelector } from "react-redux";
+
 import classes from "./UserHome.module.scss";
 import userIcon from "../local-img/user-icon.png";
 import ApRadialChart from "../charts/ApRadialChart";
 
 const UserHome = function () {
+  const todoList = useSelector((state) => state.data.todoList);
+
   return (
     <div className={classes["user-container"]}>
       <div className={classes["user-basic-info"]}>
@@ -31,15 +35,15 @@ const UserHome = function () {
       <div className={classes["user-todo-list"]}>
         <span className={classes["user-title"]}>Todo List</span>
         <ul className={classes["user-todo-list-list"]}>
-          <li className={classes["user-todo-list-item"]}>
-            - Abs and core training 20 min
-          </li>
-          <li className={classes["user-todo-list-item"]}>
-            - Legs training 25 min
-          </li>
-          <li className={classes["user-todo-list-item"]}>
-            - Whole body cardio 10 min
-          </li>
+          {todoList.map((item) => (
+            <li
+              key={item.id}
+              id={item.id}
+              className={classes["user-todo-list-item"]}
+            >
+              {item.info}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

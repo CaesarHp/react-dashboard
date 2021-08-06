@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import classes from "./SideBar.module.scss";
 import logo from "../local-img/logo.png";
@@ -13,14 +13,16 @@ const SideBar = function () {
       <IconContext.Provider value={{ className: classes["sidebar-icon"] }}>
         <div className={classes["sidebar-container"]}>
           <div>
-            <div className={classes["sidebar-logo-container"]}>
-              <img
-                src={logo}
-                alt="logo"
-                className={classes["sidebar-logo-img"]}
-              />
-              <span className={classes["sidebar-logo-type"]}>Tech-Fit</span>
-            </div>
+            <Link to="/home" className={classes["sidebar-logo-link"]}>
+              <div className={classes["sidebar-logo-container"]}>
+                <img
+                  src={logo}
+                  alt="logo"
+                  className={classes["sidebar-logo-img"]}
+                />
+                <span className={classes["sidebar-logo-type"]}>Tech-Fit</span>
+              </div>
+            </Link>
 
             <ul className={classes["sidebar-list"]}>
               <li>
