@@ -1,17 +1,16 @@
 @import "../scss-var.scss";
 
-.container {
+.monthly-container {
   display: flex;
   flex-direction: column;
 
   background-color: white;
   padding: 2rem 3rem;
-  margin-bottom: 4rem;
   border-radius: 2rem;
   font-family: inherit;
 }
 
-.title {
+.monthly-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 3rem;

@@ -1,0 +1,57 @@
+@import "../scss-var.scss";
+
+.account-container {
+  display: flex;
+  align-items: center;
+
+  padding: 3rem;
+  margin-bottom: 4rem;
+  background-color: white;
+  border-radius: 2rem;
+  font-family: inherit;
+  color: $color-grey-dark-1;
+}
+
+.account-icon {
+  width: 12rem;
+  height: 12rem;
+  margin-right: 2rem;
+}
+
+.account-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.account-job {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: $color-grey-dark-3;
+}
+
+.account-body-info {
+  display: flex;
+
+  &-individual:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+  }
+
+  &-data {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: $color-grey-dark-3;
+  }
+}

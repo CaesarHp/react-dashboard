@@ -53,3 +53,55 @@
 
   transition: all 0.2s ease-in-out;
 }
+
+.todo-edit-container {
+  list-style: none;
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: $color-grey-light-1;
+}
+
+.todo-edit-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-edit-input {
+  border: none;
+  background-color: $color-grey-light-1;
+  width: 50%;
+  padding: 1rem;
+  outline: none;
+
+  transition: all 0.2s ease-in-out;
+
+  &::-webkit-input-placeholder {
+    color: $color-grey-light-4;
+  }
+}
+
+.todo-edit-btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.todo-back-btn {
+  margin-left: 3rem;
+}
+
+.todo-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: $color-main;
+  color: white;
+
+  &:focus {
+    outline: none;
+  }
+}

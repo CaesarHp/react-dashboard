@@ -17,20 +17,26 @@ const AnalysisBasicForm = () => {
     heartRate: "",
   });
 
+  const [required, setRequired] = useState(false);
+
   const inputChangeHandler = (e) => {
     const { name } = e.target;
     const value = e.target.value.replace(/\D/g, "");
     setFormData((state) => ({ ...state, [name]: +value }));
+
+    setRequired(false);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    submitFormHandler();
-  };
 
-  const submitFormHandler = () => {
-    dispatch(dataActions.setBasicData(formData));
-    clearInputHandler();
+    if (Object.values(formData).includes("")) {
+      setRequired(true);
+      return;
+    } else {
+      dispatch(dataActions.setUserInfo(formData));
+      clearInputHandler();
+    }
   };
 
   const clearInputHandler = () => {
@@ -121,22 +127,31 @@ const AnalysisBasicForm = () => {
             />
           </form>
         </div>
-      </div>
 
-      <div className={classes["form-btn-container"]}>
-        <button
-          className={classes["form-btn-clear"]}
-          onClick={clearInputHandler}
-        >
-          Clear Input
-        </button>
-        <button
-          type="submit"
-          className={classes["form-btn-save"]}
-          onClick={submitFormHandler}
-        >
-          Save Change
-        </button>
+        <div className={classes["form-btn-container"]}>
+          {required ? (
+            <span className={classes["form-required"]}>
+              Please fill out all forms
+            </span>
+          ) : (
+            <span></span>
+          )}
+          <div>
+            <button
+              className={classes["form-btn-clear"]}
+              onClick={clearInputHandler}
+            >
+              Clear Input
+            </button>
+            <button
+              type="submit"
+              className={classes["form-btn-save"]}
+              onClick={submitHandler}
+            >
+              Save Change
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -25,6 +25,19 @@ const dataSlice = createSlice({
       { id: 2, info: "Legs training 25 min", completed: false },
       { id: 3, info: "Whole body cardio 10 min", completed: false },
     ],
+    userInfo: {
+      name: "Amanda Smith",
+      job: "Web Developer",
+      weight: 55,
+      height: 165,
+      age: 25,
+      icon: "female",
+    },
+
+    monthlyProgress: {
+      monthTotalTodo: 100,
+      monthFinishedTodo: 75,
+    },
   },
   reducers: {
     setBasicData(state, action) {
@@ -43,6 +56,8 @@ const dataSlice = createSlice({
       };
 
       state.todoList.unshift(newTodo);
+
+      state.monthlyProgress.monthTotalTodo++;
     },
 
     toggleCompleteTodo(state, action) {
@@ -50,6 +65,12 @@ const dataSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       state.todoList[index].completed = action.payload.completed;
+
+      if (action.payload.completed) {
+        state.monthlyProgress.monthFinishedTodo++;
+      } else {
+        state.monthlyProgress.monthFinishedTodo--;
+      }
     },
 
     removeTodo(state, action) {
@@ -57,6 +78,20 @@ const dataSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
       state.todoList = newList;
+
+      state.monthlyProgress.monthTotalTodo--;
+    },
+
+    editTodo(state, action) {
+      const index = state.todoList.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      state.todoList[index].info = action.payload.info;
+    },
+
+    setUserInfo(state, action) {
+      state.userInfo = action.payload;
     },
   },
 });

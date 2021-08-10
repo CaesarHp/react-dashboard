@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import Chart from "react-apexcharts";
 
 const ApRadialChart = function () {
-  const [options, setOption] = useState({
+  const progress = useSelector((state) => state.data.monthlyProgress);
+  const completed = Math.round(
+    (progress.monthFinishedTodo / progress.monthTotalTodo) * 100
+  );
+
+  const [options] = useState({
     chart: {
       type: "radialBar",
       sparkline: {
@@ -36,7 +43,7 @@ const ApRadialChart = function () {
     },
   });
 
-  const [series, setSeries] = useState([76]);
+  const [series] = useState([completed]);
 
   return (
     <div>

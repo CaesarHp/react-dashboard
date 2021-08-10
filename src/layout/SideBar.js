@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 import classes from "./SideBar.module.scss";
 import logo from "../local-img/logo.png";
-import promot from "../local-img/promot.png";
+import promot from "../local-img/promot-1.png";
 import { IconContext } from "react-icons";
 import { FaHome, FaChartPie, FaCalendarAlt, FaUser } from "react-icons/fa";
 
@@ -74,9 +74,11 @@ const SideBar = function () {
               alt="img"
               className={classes["sidebar-promot-img"]}
             />
-            <button className={classes["sidebar-promot-btn"]}>
-              Upgrade to Pro
-            </button>
+            <Link to="/account">
+              <button className={classes["sidebar-promot-btn"]}>
+                Upgrade to Pro
+              </button>
+            </Link>
           </div>
         </div>
       </IconContext.Provider>

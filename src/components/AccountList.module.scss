@@ -1,23 +1,22 @@
 @import "../scss-var.scss";
 
-.listform-container {
+.accountlist-container {
   background-color: white;
   padding: 2rem 3rem;
   border-radius: 2rem;
-  margin-bottom: 4rem;
   font-family: inherit;
 
   display: flex;
   flex-direction: column;
 }
 
-.listform-title {
+.accountlist-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 3rem;
 }
 
-.listform-section {
+.accountlist-section {
   display: flex;
   justify-content: space-between;
 }
@@ -56,15 +55,6 @@
   &::-webkit-input-placeholder {
     color: $color-grey-light-4;
   }
-}
-
-.form-heartrate {
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  color: black;
-  background-color: $color-grey-light-1;
-  padding: 1rem 2rem 1rem 1rem;
 }
 
 .form-btn-container {
