@@ -43,7 +43,7 @@ const AnalysisCaloriesForm = function () {
       setRequired(true);
       return;
     } else {
-      dispatch(dataActions.setUserInfo(formData));
+      dispatch(dataActions.setCaloriesData(formData));
       clearInputHandler();
     }
   };

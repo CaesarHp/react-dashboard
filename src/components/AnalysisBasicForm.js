@@ -34,7 +34,7 @@ const AnalysisBasicForm = () => {
       setRequired(true);
       return;
     } else {
-      dispatch(dataActions.setUserInfo(formData));
+      dispatch(dataActions.setBasicData(formData));
       clearInputHandler();
     }
   };
